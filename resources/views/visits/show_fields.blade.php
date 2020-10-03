@@ -1,30 +1,31 @@
-<!-- Patient Id Field -->
-<div class="form-group">
-    {!! Form::label('patient_id', 'Pasien:') !!}
-    <p>{{ $visit->patient->name }}</p>
-</div>
-
 <!-- Visit Date Field -->
-<div class="form-group">
-    {!! Form::label('visit_date', 'Tanggal Kunjungan:') !!}
-    <p>{{ $visit->visit_date->format('d-m-y') }}</p>
+<div class="form-group row">
+    {!! Form::label('visit_date', 'Tanggal Kunjungan:', ['class' => 'col-md-4 col-form-label']) !!}
+    <div class="col-md-8">
+        {!! Form::text('visit_date', $visit->visit_date->format('d-m-Y'), ['class' => 'form-control', 'readonly']) !!}
+    </div>
 </div>
 
 <!-- Complaint Field -->
-<div class="form-group">
-    {!! Form::label('complaint', 'Keluhan:') !!}
-    <p>{{ $visit->complaint }}</p>
+<div class="form-group row">
+    {!! Form::label('complaint', 'Keluhan:', ['class' => 'col-md-4 col-form-label']) !!}
+    <div class="col-md-8">
+        {!! Form::textarea('complaint', $visit->complaint, ['class' => 'form-control', 'readonly']) !!}
+    </div>
 </div>
 
 <!-- Diagnosis Field -->
-<div class="form-group">
-    {!! Form::label('diagnosis', 'Diagnosa:') !!}
-    <p>{{ $visit->diagnosis }}</p>
+<div class="form-group row">
+    {!! Form::label('diagnosis', 'Diagnosa:', ['class' => 'col-md-4 col-form-label']) !!}
+    <div class="col-md-8">
+        {!! Form::textarea('diagnosis', $visit->diagnosis, ['class' => 'form-control', 'readonly']) !!}
+    </div>
 </div>
 
 <!-- Medication Field -->
-<div class="form-group">
-    {!! Form::label('medication', 'Obat:') !!}
-    <p>{{ $visit->medication }}</p>
+<div class="form-group row">
+    {!! Form::label('medication', 'Obat:', ['class' => 'col-md-4 col-form-label']) !!}
+    <div class="col-md-8">
+        {!! Form::textarea('medication', $visit->medication, ['class' => 'form-control', 'readonly']) !!}
+    </div>
 </div>
-

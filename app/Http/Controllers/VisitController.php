@@ -98,7 +98,9 @@ class VisitController extends AppBaseController
             return redirect(route('visits.index'));
         }
 
-        return view('visits.show')->with('visit', $visit);
+        return view('visits.show')
+            ->with('visit', $visit)
+            ->with('patient', $visit->patient);
     }
 
     /**

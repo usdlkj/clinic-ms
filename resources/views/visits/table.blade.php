@@ -12,7 +12,7 @@
         <tbody>
             @foreach($visits as $visit)
             <tr>
-                <td>{{ $visit->visit_date->format('d-m-y') }}</td>
+                <td>{{ $visit->visit_date->format('d-m-Y') }}</td>
                 <td>{{ $visit->complaint }}</td>
                 <td>{{ $visit->diagnosis }}</td>
                 <td>{{ $visit->medication }}</td>

@@ -1,19 +1,25 @@
 <!-- Registration Number Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('registration_number', 'No Registrasi:') !!}
-    {!! Form::text('registration_number', null, ['class' => 'form-control','maxlength' => 10]) !!}
+<div class="form-group row">
+    {!! Form::label('registration_number', 'No Registrasi:', ['class' => 'col-md-3 col-form-label']) !!}
+    <div class="col-md-9">
+        {!! Form::text('registration_number', null, ['class' => 'form-control']) !!}
+    </div>
 </div>
 
 <!-- Name Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('name', 'Nama:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+<div class="form-group row">
+    {!! Form::label('name', 'Nama:', ['class' => 'col-md-3 col-form-label']) !!}
+    <div class="col-md-9">
+        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+    </div>
 </div>
 
 <!-- Birth Date Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('birth_date', 'Tanggal Lahir:') !!}
-    {!! Form::text('birth_date', null, ['class' => 'form-control','id'=>'birth_date']) !!}
+<div class="form-group row">
+    {!! Form::label('birth_date', 'Tanggal Lahir:', ['class' => 'col-md-3 col-form-label']) !!}
+    <div class="col-md-9">
+        {!! Form::text('birth_date', null, ['class' => 'form-control']) !!}
+    </div>
 </div>
 
 @push('scripts')
@@ -31,31 +37,33 @@
 @endpush
 
 <!-- Age Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('age', 'Age:') !!}
-    {!! Form::number('age', null, ['class' => 'form-control']) !!}
+<div class="form-group row">
+    {!! Form::label('age', 'Usia:', ['class' => 'col-md-3 col-form-label']) !!}
+    <div class="col-md-9">
+        {!! Form::text('age', null, ['class' => 'form-control']) !!}
+    </div>
 </div>
 
 <!-- Address Field -->
-<div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('address', 'Alamat:') !!}
-    {!! Form::textarea('address', null, ['class' => 'form-control']) !!}
+<div class="form-group row">
+    {!! Form::label('address', 'Alamat:', ['class' => 'col-md-3 col-form-label']) !!}
+    <div class="col-md-9">
+        {!! Form::textarea('address', null, ['class' => 'form-control']) !!}
+    </div>
 </div>
 
 <!-- Phone Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('phone', 'No Telepon:') !!}
-    {!! Form::text('phone', null, ['class' => 'form-control']) !!}
+<div class="form-group row">
+    {!! Form::label('phone', 'No Telepon:', ['class' => 'col-md-3 col-form-label']) !!}
+    <div class="col-md-9">
+        {!! Form::text('phone', null, ['class' => 'form-control']) !!}
+    </div>
 </div>
 
 <!-- Email Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('email', 'Email:') !!}
-    {!! Form::email('email', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Submit Field -->
-<div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('patients.index') }}" class="btn btn-secondary">Cancel</a>
+<div class="form-group row">
+    {!! Form::label('email', 'Email:', ['class' => 'col-md-3 col-form-label']) !!}
+    <div class="col-md-9">
+        {!! Form::text('email', null, ['class' => 'form-control']) !!}
+    </div>
 </div>

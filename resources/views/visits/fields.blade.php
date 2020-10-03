@@ -2,9 +2,11 @@
 {!! Form::hidden('patient_id', $patient->id) !!}
 
 <!-- Visit Date Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('visit_date', 'Tanggal Kunjungan:') !!}
-    {!! Form::text('visit_date', null, ['class' => 'form-control','id'=>'visit_date']) !!}
+<div class="form-group row">
+    {!! Form::label('visit_date', 'Tanggal Kunjungan:', ['class' => 'col-md-4 col-form-label']) !!}
+    <div class="col-md-8">
+        {!! Form::text('visit_date', null, ['class' => 'form-control']) !!}
+    </div>
 </div>
 
 @push('scripts')
@@ -21,27 +23,26 @@ $('#visit_date').datetimepicker({
 </script>
 @endpush
 
-
 <!-- Complaint Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('complaint', 'Keluhan:') !!}
-    {!! Form::text('complaint', null, ['class' => 'form-control','maxlength' => 191,'maxlength' => 191]) !!}
+<div class="form-group row">
+    {!! Form::label('complaint', 'Keluhan:', ['class' => 'col-md-4 col-form-label']) !!}
+    <div class="col-md-8">
+        {!! Form::textarea('complaint', null, ['class' => 'form-control']) !!}
+    </div>
 </div>
 
 <!-- Diagnosis Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('diagnosis', 'Diagnosa:') !!}
-    {!! Form::text('diagnosis', null, ['class' => 'form-control','maxlength' => 191,'maxlength' => 191]) !!}
+<div class="form-group row">
+    {!! Form::label('diagnosis', 'Diagnosa:', ['class' => 'col-md-4 col-form-label']) !!}
+    <div class="col-md-8">
+        {!! Form::textarea('diagnosis', null, ['class' => 'form-control']) !!}
+    </div>
 </div>
 
 <!-- Medication Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('medication', 'Obat:') !!}
-    {!! Form::text('medication', null, ['class' => 'form-control','maxlength' => 191,'maxlength' => 191]) !!}
-</div>
-
-<!-- Submit Field -->
-<div class="form-group col-sm-12">
-    {!! Form::submit('Simpan', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('visits.index', [$patient->id]) }}" class="btn btn-secondary">Kembali</a>
+<div class="form-group row">
+    {!! Form::label('medication', 'Obat:', ['class' => 'col-md-4 col-form-label']) !!}
+    <div class="col-md-8">
+        {!! Form::textarea('medication', null, ['class' => 'form-control']) !!}
+    </div>
 </div>

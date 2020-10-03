@@ -11,7 +11,17 @@
     <div class="animated fadeIn">
         @include('coreui-templates::common.errors')
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>{{ $patient->name }}</strong>
+                    </div>
+                    <div class="card-body">
+                        @include('patients.show_fields')
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
                         <strong>Detil Kunjungan</strong>
