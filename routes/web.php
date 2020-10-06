@@ -19,9 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::middleware('auth')->group(function() {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
     Route::resource('patients', App\Http\Controllers\PatientController::class)->middleware('auth');
 
     Route::resource('users', App\Http\Controllers\UserController::class);
