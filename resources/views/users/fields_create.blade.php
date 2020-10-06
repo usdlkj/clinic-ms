@@ -18,7 +18,7 @@
 <div class="form-group row">
     {!! Form::label('password', 'Password:', ['class' => 'col-md-4 col-form-label']) !!}
     <div class="col-md-8">
-        {!! Form::text('password', null, ['class' => 'form-control']) !!}
+        <input name="password" type="password" id="password" class="form-control">
     </div>
 </div>
 
@@ -26,7 +26,7 @@
 <div class="form-group row">
     {!! Form::label('password_confirmation', 'Confirm Password:', ['class' => 'col-md-4 col-form-label']) !!}
     <div class="col-md-8">
-        {!! Form::text('password_confirmation', null, ['class' => 'form-control']) !!}
+        <input name="password_confirmation" type="password" id="password_confirmation" class="form-control">
     </div>
 </div>
 
