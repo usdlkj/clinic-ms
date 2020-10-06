@@ -68,7 +68,6 @@ class Patient extends Model
         'registration_number' => 'required|max:10|unique:patients',
         'name' => 'required',
         'address' => 'required',
-        'phone' => 'required',
     ];
 
     /**
