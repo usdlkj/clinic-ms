@@ -23,7 +23,7 @@
                     </div>
                     <div class="card-footer">
                         <!-- Submit Field -->
-                        {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                        {!! Form::submit('Save', ['class' => 'btn kapzet-blue']) !!}
                         <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancel</a>
                     </div>
                     {!! Form::close() !!}

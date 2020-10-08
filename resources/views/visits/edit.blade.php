@@ -33,7 +33,7 @@
                     </div>
                     <div class="card-footer">
                         <!-- Submit Field -->
-                        {!! Form::submit('Save', ['class' => 'btn btn-sm btn-primary']) !!}
+                        {!! Form::submit('Save', ['class' => 'btn kapzet-blue']) !!}
                         <a href="{{ route('visits.index', $visit->patient_id) }}" class="btn btn-sm btn-secondary">Cancel</a>
                     </div>
                     {!! Form::close() !!}

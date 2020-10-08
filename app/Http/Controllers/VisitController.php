@@ -147,7 +147,7 @@ class VisitController extends AppBaseController
 
         Flash::success('Visit updated successfully.');
 
-        return redirect(route('visits.index'));
+        return redirect(route('visits.index', $visit->patient_id));
     }
 
     /**

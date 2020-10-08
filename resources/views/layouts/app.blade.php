@@ -23,6 +23,13 @@
 
     <!-- Datatables -->
     <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <style>
+        .kapzet-blue {
+            background-color: #1f3281;
+            color: white;
+        }
+    </style>
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar">

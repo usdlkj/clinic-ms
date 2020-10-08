@@ -18,6 +18,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
+
+    <style>
+        .kapzet-blue {
+            background-color: #1f3281;
+            color: white;
+        }
+    </style>
 </head>
 <body class="app flex-row align-items-center">
 <div class="container">
@@ -59,7 +66,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <button class="btn btn-primary px-4" type="submit">Login</button>
+                                    <button class="btn kapzet-blue px-4" type="submit">Login</button>
                                 </div>
                                 <div class="col-6 text-right">
                                     <a class="btn btn-link px-0" href="{{ url('/password/reset') }}">
@@ -70,7 +77,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                <div class="card text-white py-5 kapzet-blue d-md-down-none" style="width:44%">
                     <div class="card-body text-center">
                         <div>
                             <h2>Klinik Dr. Hardja</h2>
