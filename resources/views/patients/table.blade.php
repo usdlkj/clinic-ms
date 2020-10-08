@@ -4,11 +4,12 @@
             <tr>
                 <th>No Registrasi</th>
                 <th>Nama</th>
-                <th>Tanggal Lahir</th>
+                <th>Tanggal Periksa</th>
                 <th>Usia</th>
                 <th>Alamat</th>
-                <th>No Telepon</th>
-                <th>Email</th>
+                <th>Keluhan</th>
+                <th>Diagnosa</th>
+                <th>Obat</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -16,19 +17,18 @@
             @foreach($patients as $patient)
             <tr>
                 <td>{{ $patient->registration_number }}</td>
-                <td>{{ $patient->name }}</td>
-                <td>{{ $patient->birth_date->format('d-m-y') }}</td>
+                <td><a href="{{ route('patients.edit', [$patient->id]) }}"><i class="fa fa-edit"></i>
+                        {{ $patient->name }}</a></td>
+                <td><a href="{{ route('visits.index', [$patient->id]) }}"><i class="fa fa-eye"></i>
+                        {{ $patient->last_visit }}</a></td>
                 <td>{{ $patient->age }}</td>
                 <td>{{ $patient->address }}</td>
-                <td>{{ $patient->phone }}</td>
-                <td>{{ $patient->email }}</td>
+                <td>{{ $patient->complaint }}</td>
+                <td>{{ $patient->diagnosis }}</td>
+                <td>{{ $patient->medication }}</td>
                 <td>
                     {!! Form::open(['route' => ['patients.destroy', $patient->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('visits.index', [$patient->id]) }}" class='btn btn-ghost-success'><i
-                                class="fa fa-eye"></i></a>
-                        <a href="{{ route('patients.edit', [$patient->id]) }}" class='btn btn-ghost-info'><i
-                                class="fa fa-edit"></i></a>
                         {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn
                         btn-ghost-danger', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>

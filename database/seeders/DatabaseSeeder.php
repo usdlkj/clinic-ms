@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
         ]);
-        \App\Models\User::factory(20)->create();
-        \App\Models\Patient::factory()
-            ->times(50)
-            ->hasVisits(20)
-            ->create();
+        // \App\Models\User::factory(20)->create();
+        // \App\Models\Patient::factory()
+        //     ->times(50)
+        //     ->hasVisits(20)
+        //     ->create();
     }
 }

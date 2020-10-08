@@ -32,6 +32,18 @@ class PatientController extends AppBaseController
     public function index(Request $request)
     {
         $patients = $this->patientRepository->all();
+        foreach ($patients as $patient) {
+            $patient['last_visit'] = '';
+            $patient['complaint'] = '';
+            $patient['diagnosis'] = '';
+            $patient['medication'] =  '';
+            if (count($patient->visits) > 0) {
+                $patient['last_visit'] = date_format($patient->orderedVisits[0]->visit_date, 'd-m-Y');
+                $patient['complaint'] = $patient->orderedVisits[0]->complaint;
+                $patient['diagnosis'] = $patient->orderedVisits[0]->diagnosis;
+                $patient['medication'] = $patient->orderedVisits[0]->medication;
+            }
+        }
 
         return view('patients.index')
             ->with('patients', $patients);

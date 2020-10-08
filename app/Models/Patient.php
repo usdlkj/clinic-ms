@@ -77,4 +77,13 @@ class Patient extends Model
     {
         return $this->hasMany('App\Models\Visit');
     }
+
+    /**
+     * Get the last visit for the patient
+     */
+    public function orderedVisits()
+    {
+        return $this->hasMany('App\Models\Visit')
+            ->orderBy('visit_date', 'desc');
+    }
 }
