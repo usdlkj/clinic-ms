@@ -1,5 +1,7 @@
 <!-- Patient Id Field-->
+@if (isset($patient))
 {!! Form::hidden('patient_id', $patient->id) !!}
+@endif
 
 <!-- Visit Date Field -->
 <div class="form-group row">
@@ -27,7 +29,7 @@ $('#visit_date').datetimepicker({
 <div class="form-group row">
     {!! Form::label('complaint', 'Keluhan:', ['class' => 'col-md-4 col-form-label']) !!}
     <div class="col-md-8">
-        {!! Form::textarea('complaint', null, ['class' => 'form-control']) !!}
+        {!! Form::textarea('complaint', null, ['class' => 'form-control', 'rows' => '5']) !!}
     </div>
 </div>
 
@@ -35,7 +37,7 @@ $('#visit_date').datetimepicker({
 <div class="form-group row">
     {!! Form::label('diagnosis', 'Diagnosa:', ['class' => 'col-md-4 col-form-label']) !!}
     <div class="col-md-8">
-        {!! Form::textarea('diagnosis', null, ['class' => 'form-control']) !!}
+        {!! Form::textarea('diagnosis', null, ['class' => 'form-control', 'rows' => '5']) !!}
     </div>
 </div>
 
@@ -43,6 +45,6 @@ $('#visit_date').datetimepicker({
 <div class="form-group row">
     {!! Form::label('medication', 'Obat:', ['class' => 'col-md-4 col-form-label']) !!}
     <div class="col-md-8">
-        {!! Form::textarea('medication', null, ['class' => 'form-control']) !!}
+        {!! Form::textarea('medication', null, ['class' => 'form-control', 'rows' => '5']) !!}
     </div>
 </div>

@@ -60,7 +60,6 @@ class Visit extends Model
      * @var array
      */
     public static $rules = [
-        'patient_id' => 'required',
         'visit_date' => 'required',
         'complaint' => 'nullable|string|max:191',
         'diagnosis' => 'nullable|string|max:191',

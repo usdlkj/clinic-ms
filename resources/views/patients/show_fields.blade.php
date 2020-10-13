@@ -34,7 +34,7 @@
 <div class="form-group row">
     {!! Form::label('address', 'Alamat:', ['class' => 'col-md-3 col-form-label']) !!}
     <div class="col-md-9">
-        {!! Form::textarea('address', $patient->address, ['class' => 'form-control', 'readonly']) !!}
+        {!! Form::textarea('address', $patient->address, ['class' => 'form-control', 'rows' => '5', 'readonly']) !!}
     </div>
 </div>
 

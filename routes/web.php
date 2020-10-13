@@ -23,6 +23,9 @@ Route::middleware('auth')->group(function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::resource('patients', App\Http\Controllers\PatientController::class)->middleware('auth');
+    Route::post('patients/storePatientVisit', [App\Http\Controllers\PatientController::class, 'storePatientVisit'])
+        ->name('patients.storePatientVisit')
+        ->middleware('auth');
 
     Route::resource('users', App\Http\Controllers\UserController::class);
     Route::patch('users/{id}/verify', [App\Http\Controllers\UserController::class, 'verify'])->name('users.verify');

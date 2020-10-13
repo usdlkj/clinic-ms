@@ -10,7 +10,7 @@
 <div class="form-group row">
     {!! Form::label('complaint', 'Keluhan:', ['class' => 'col-md-4 col-form-label']) !!}
     <div class="col-md-8">
-        {!! Form::textarea('complaint', $visit->complaint, ['class' => 'form-control', 'readonly']) !!}
+        {!! Form::textarea('complaint', $visit->complaint, ['class' => 'form-control', 'readonly', 'rows' => '5']) !!}
     </div>
 </div>
 
@@ -18,7 +18,7 @@
 <div class="form-group row">
     {!! Form::label('diagnosis', 'Diagnosa:', ['class' => 'col-md-4 col-form-label']) !!}
     <div class="col-md-8">
-        {!! Form::textarea('diagnosis', $visit->diagnosis, ['class' => 'form-control', 'readonly']) !!}
+        {!! Form::textarea('diagnosis', $visit->diagnosis, ['class' => 'form-control', 'readonly', 'rows' => '5']) !!}
     </div>
 </div>
 
@@ -26,6 +26,6 @@
 <div class="form-group row">
     {!! Form::label('medication', 'Obat:', ['class' => 'col-md-4 col-form-label']) !!}
     <div class="col-md-8">
-        {!! Form::textarea('medication', $visit->medication, ['class' => 'form-control', 'readonly']) !!}
+        {!! Form::textarea('medication', $visit->medication, ['class' => 'form-control', 'readonly', 'rows' => '5']) !!}
     </div>
 </div>

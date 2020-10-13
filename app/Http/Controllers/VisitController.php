@@ -173,6 +173,6 @@ class VisitController extends AppBaseController
 
         Flash::success('Kunjungan sukses dihapus');
 
-        return redirect(route('visits.index', $patient->id));
+        return redirect(route('visits.index', $visit->patient_id));
     }
 }

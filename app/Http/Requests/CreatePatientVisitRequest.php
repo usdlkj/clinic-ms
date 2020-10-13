@@ -4,8 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Patient;
+use App\Models\Visit;
 
-class UpdatePatientRequest extends FormRequest
+class CreatePatientVisitRequest extends FormRequest
 {
 
     /**
@@ -25,8 +26,7 @@ class UpdatePatientRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = Patient::$rules;
-        $rules['registration_number'] = $rules['registration_number'].",id,".$this->route("patient");
+        $rules = array_merge(Patient::$rules, Visit::$rules);
         return $rules;
     }
 }

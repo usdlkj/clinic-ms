@@ -10,26 +10,37 @@
 <div class="container-fluid">
     <div class="animated fadeIn">
         @include('coreui-templates::common.errors')
+        {!! Form::open(['route' => 'patients.storePatientVisit']) !!}
         <div class="row">
-            <div class="col-md-6">
+            <div class="col">
                 <div class="card">
                     <div class="card-header">
                         <i class="fa fa-plus-square-o fa-lg"></i>
-                        <strong>Buat Pasien Baru</strong>
+                        <strong>Pasien</strong>
                     </div>
-                    {!! Form::open(['route' => 'patients.store']) !!}
                     <div class="card-body">
                         @include('patients.fields')
                     </div>
                     <div class="card-footer">
                         <!-- Submit Field -->
-                        {!! Form::submit('Save', ['class' => 'btn apzet-blue']) !!}
+                        {!! Form::submit('Save', ['class' => 'btn kapzet-blue']) !!}
                         <a href="{{ route('patients.index') }}" class="btn btn-sm btn-secondary">Cancel</a>
                     </div>
-                    {!! Form::close() !!}
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa fa-plus-square-o fa-lg"></i>
+                        <strong>Kunjungan</strong>
+                    </div>
+                    <div class="card-body">
+                        @include('visits.fields')
+                    </div>
                 </div>
             </div>
         </div>
+        {!! Form::close() !!}
     </div>
 </div>
 @endsection

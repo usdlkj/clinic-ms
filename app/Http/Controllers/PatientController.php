@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePatientRequest;
+use App\Http\Requests\CreatePatientVisitRequest;
 use App\Http\Requests\UpdatePatientRequest;
 use App\Repositories\PatientRepository;
+use App\Repositories\VisitRepository;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Patient;
 use App\DataTables\PatientsDataTable;
@@ -17,9 +19,13 @@ class PatientController extends AppBaseController
     /** @var  PatientRepository */
     private $patientRepository;
 
-    public function __construct(PatientRepository $patientRepo)
+    /** @var  VisitRepository */
+    private $visitRepository;
+
+    public function __construct(PatientRepository $patientRepo, VisitRepository $visitRepo)
     {
         $this->patientRepository = $patientRepo;
+        $this->visitRepository = $visitRepo;
     }
 
     /**
@@ -71,6 +77,41 @@ class PatientController extends AppBaseController
         $input = $request->all();
 
         $patient = $this->patientRepository->create($input);
+
+        Flash::success('Patient saved successfully.');
+
+        return redirect(route('patients.index'));
+    }
+
+    /**
+     * Store new Patient and his Visit
+     * 
+     * @param CreatePatientVisitRequest $request
+     * 
+     * @return Response
+     */
+
+    public function storePatientVisit(CreatePatientVisitRequest $request)
+    {
+        $input = $request->all();
+
+        $patient = $this->patientRepository->create([
+            'registration_number'   => $input['registration_number'],
+            'name'                  => $input['name'],
+            'birth_date'            => $input['birth_date'],
+            'age'                   => $input['age'],
+            'address'               => $input['address'],
+            'phone'                 => $input['phone'],
+            'email'                 => $input['email']
+        ]);
+
+        $visit = $this->visitRepository->create([
+            'patient_id'    => $patient->id,
+            'visit_date'    => $input['visit_date'],
+            'complaint'     => $input['complaint'],
+            'diagnosis'     => $input['diagnosis'],
+            'medication'    => $input['medication']
+        ]);
 
         Flash::success('Patient saved successfully.');
 
@@ -135,7 +176,16 @@ class PatientController extends AppBaseController
             return redirect(route('patients.index'));
         }
 
-        $patient = $this->patientRepository->update($request->all(), $id);
+        $input = $request->all();
+
+        $patient = $this->patientRepository->update([
+            'name'          => $input['name'],
+            'birth_date'    => $input['birth_date'],
+            'age'           => $input['age'],
+            'address'       => $input['address'],
+            'phone'         => $input['phone'],
+            'email'         => $input['email']
+        ], $id);
 
         Flash::success('Patient updated successfully.');
 
