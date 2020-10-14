@@ -18,7 +18,11 @@
 <div class="form-group row">
     {!! Form::label('birth_date', 'Tanggal Lahir:', ['class' => 'col-md-3 col-form-label']) !!}
     <div class="col-md-9">
+        @if (!isset($patient->birth_date))
         {!! Form::text('birth_date', date_format($patient->birth_date, 'd-m-Y'), ['class' => 'form-control', 'readonly']) !!}
+        @else
+        {!! Form::text('birth_date', null, ['class' => 'form-control', 'readonly'])} !!}
+        @endif
     </div>
 </div>
 
