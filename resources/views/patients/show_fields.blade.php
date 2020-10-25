@@ -21,7 +21,7 @@
         @if (!isset($patient->birth_date))
         {!! Form::text('birth_date', date_format($patient->birth_date, 'd-m-Y'), ['class' => 'form-control', 'readonly']) !!}
         @else
-        {!! Form::text('birth_date', null, ['class' => 'form-control', 'readonly'])} !!}
+        {!! Form::text('birth_date', null, ['class' => 'form-control', 'readonly']) !!}
         @endif
     </div>
 </div>

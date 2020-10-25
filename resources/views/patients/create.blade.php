@@ -44,3 +44,21 @@
     </div>
 </div>
 @endsection
+
+@section('styles')
+<!-- Select2 -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+@endsection
+
+@push('scripts')
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script type="text/javascript">
+$('.js-data-example-ajax').select2({
+    ajax: {
+        url: '/api/visits/diagnosis',
+    },
+    tags: true
+});
+</script>
+@endpush

@@ -37,7 +37,7 @@ $('#visit_date').datetimepicker({
 <div class="form-group row">
     {!! Form::label('diagnosis', 'Diagnosa:', ['class' => 'col-md-4 col-form-label']) !!}
     <div class="col-md-8">
-        {!! Form::textarea('diagnosis', null, ['class' => 'form-control', 'rows' => '5']) !!}
+        <select id="diagnosis" name="diagnosis" class="form-control js-data-example-ajax"></select>
     </div>
 </div>
 
