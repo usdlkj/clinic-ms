@@ -52,14 +52,12 @@ class VisitAPIController extends AppBaseController
             ->distinct()
             ->get();
 
-        $id = 1;
         $results = [];
         foreach ($diagnosis as $d) {
             array_push($results, [
-                'id' => $id,
+                'id' => $d->diagnosis,
                 'text' => $d->diagnosis
             ]);
-            $id++;
         }
         $response = [
             'results' => $results,
@@ -76,9 +74,14 @@ class VisitAPIController extends AppBaseController
      */
     public function getDiagnosisByVisitId($id)
     {
-        $diagnosis = DB::table('visits')->find($id);
+        $visit = DB::table('visits')->find($id);
+        $results = [
+            ['id' => $visit->diagnosis, 'text' => $visit->diagnosis]
+        ];
 
-        return json_encode($diagnosis);
+        return [
+            'results' => $results
+        ];
     }
 
     /**

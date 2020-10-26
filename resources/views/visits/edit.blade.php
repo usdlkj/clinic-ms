@@ -66,8 +66,10 @@ $.ajax({
     type: 'GET',
     url: '/api/visit/diagnosis/{{$visit->id}}'
 }).then(function (data) {
+    console.log(data.results);
+    var diagnosis = data.results[0];
     // create the option and append to Select2
-    var option = new Option('{{$visit->diagnosis}}', '{{$visit->diagnosis}}', true, true);
+    var option = new Option(diagnosis.text, diagnosis.id, true, true);
     diagnosisSelect.append(option).trigger('change');
 
     // manually trigger the `select2:select` event
