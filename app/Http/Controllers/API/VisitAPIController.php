@@ -70,6 +70,16 @@ class VisitAPIController extends AppBaseController
 
         return $response;
     }
+    
+    /**
+     * Display diagnosis by Visit's id
+     */
+    public function getDiagnosisByVisitId($id)
+    {
+        $diagnosis = DB::table('visits')->find($id);
+
+        return json_encode($diagnosis);
+    }
 
     /**
      * Store a newly created Visit in storage.

@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('visits/diagnosis', [App\Http\Controllers\API\VisitAPIController::class, 'getDistinctDiagnosis'])->name('visits.diagnosis');
+Route::get('visit/diagnosis/{id}', [App\Http\Controllers\API\VisitAPIController::class, 'getDiagnosisByVisitId'])->name('visit.diagnosis.by.id');

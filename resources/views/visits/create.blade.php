@@ -53,7 +53,7 @@
 <!-- Select2 -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script type="text/javascript">
-$('.js-data-example-ajax').select2({
+$('#diagnosis').select2({
     ajax: {
         url: '/api/visits/diagnosis',
     },
