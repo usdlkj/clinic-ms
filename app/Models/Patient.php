@@ -75,7 +75,7 @@ class Patient extends Model
      */
     public function visits()
     {
-        return $this->hasMany('App\Models\Visit');
+        return $this->hasMany(\App\Models\Visit::class);
     }
 
     /**
@@ -83,7 +83,7 @@ class Patient extends Model
      */
     public function orderedVisits()
     {
-        return $this->hasMany('App\Models\Visit')
+        return $this->hasMany(\App\Models\Visit::class)
             ->orderBy('visit_date', 'desc');
     }
 }
