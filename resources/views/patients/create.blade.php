@@ -9,7 +9,7 @@
 </ol>
 <div class="container-fluid">
     <div class="animated fadeIn">
-        @include('coreui-templates::common.errors')
+        @include('common.errors')
         {!! Form::open(['route' => 'patients.storePatientVisit']) !!}
         <div class="row">
             <div class="col">
