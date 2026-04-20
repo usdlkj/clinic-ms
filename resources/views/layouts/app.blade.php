@@ -24,7 +24,7 @@
     <!-- Datatables -->
     <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
 
-    @yield('styles')
+    @stack('styles')
 
     <style>
         .kapzet-blue {

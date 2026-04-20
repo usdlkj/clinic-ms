@@ -44,35 +44,16 @@
 </div>
 @endsection
 
-@section('styles')
-<!-- Select2 -->
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-@endsection
-
 @push('scripts')
-<!-- Select2 -->
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script type="text/javascript">
-$('#diagnosis').select2({
-    ajax: {
-        url: '/api/visits/diagnosis',
-    },
-    tags: true
-});
-
-// Fetch the preselected item, and add to the control
 var diagnosisSelect = $('#diagnosis');
 $.ajax({
     type: 'GET',
     url: '/api/visit/diagnosis/{{$visit->id}}'
 }).then(function (data) {
-    console.log(data.results);
     var diagnosis = data.results[0];
-    // create the option and append to Select2
     var option = new Option(diagnosis.text, diagnosis.id, true, true);
     diagnosisSelect.append(option).trigger('change');
-
-    // manually trigger the `select2:select` event
     diagnosisSelect.trigger({
         type: 'select2:select',
         params: {

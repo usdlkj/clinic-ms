@@ -48,3 +48,19 @@ $('#visit_date').datetimepicker({
         {!! Form::textarea('medication', null, ['class' => 'form-control', 'rows' => '5']) !!}
     </div>
 </div>
+
+@push('styles')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+@endpush
+
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script type="text/javascript">
+$('#diagnosis').select2({
+    ajax: {
+        url: '/api/visits/diagnosis',
+    },
+    tags: true
+});
+</script>
+@endpush
