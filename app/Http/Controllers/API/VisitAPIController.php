@@ -5,7 +5,6 @@ namespace App\Http\Controllers\API;
 use App\Models\Visit;
 use App\Repositories\VisitRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\AppBaseController;
 use Response;
 
@@ -47,10 +46,7 @@ class VisitAPIController extends AppBaseController
      */
     public function getDistinctDiagnosis(Request $request)
     {
-        $diagnosis = DB::table('visits')
-            ->select('diagnosis')
-            ->distinct()
-            ->get();
+        $diagnosis = Visit::select('diagnosis')->distinct()->get();
 
         $results = [];
         foreach ($diagnosis as $d) {
@@ -74,14 +70,15 @@ class VisitAPIController extends AppBaseController
      */
     public function getDiagnosisByVisitId($id)
     {
-        $visit = DB::table('visits')->find($id);
+        $visit = Visit::find($id);
+        if (!$visit) {
+            return response()->json(['results' => []], 404);
+        }
         $results = [
             ['id' => $visit->diagnosis, 'text' => $visit->diagnosis]
         ];
 
-        return [
-            'results' => $results
-        ];
+        return ['results' => $results];
     }
 
     /**
