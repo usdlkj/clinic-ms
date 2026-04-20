@@ -39,3 +39,9 @@ Route::middleware('auth')->group(function() {
     Route::get('visits/{id}/edit', [App\Http\Controllers\VisitController::class, 'edit'])->name('visits.edit');
     Route::patch('visits/{id}/update', [App\Http\Controllers\VisitController::class, 'update'])->name('visits.update');
 });
+
+// Diagnosis autocomplete routes — session-authenticated AJAX endpoints
+Route::middleware('auth')->group(function () {
+    Route::get('/api/visits/diagnosis', [App\Http\Controllers\API\VisitAPIController::class, 'getDistinctDiagnosis'])->name('visits.diagnosis');
+    Route::get('/api/visit/diagnosis/{id}', [App\Http\Controllers\API\VisitAPIController::class, 'getDiagnosisByVisitId'])->name('visit.diagnosis.by.id');
+});

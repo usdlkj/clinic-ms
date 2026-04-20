@@ -17,8 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::middleware('auth')->group(function () {
-    Route::get('visits/diagnosis', [App\Http\Controllers\API\VisitAPIController::class, 'getDistinctDiagnosis'])->name('visits.diagnosis');
-    Route::get('visit/diagnosis/{id}', [App\Http\Controllers\API\VisitAPIController::class, 'getDiagnosisByVisitId'])->name('visit.diagnosis.by.id');
-});
