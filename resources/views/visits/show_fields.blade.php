@@ -18,7 +18,7 @@
 <div class="form-group row">
     {!! Form::label('diagnosis', 'Diagnosa:', ['class' => 'col-md-4 col-form-label']) !!}
     <div class="col-md-8">
-        {!! Form::text('diagnosis', $visit->diagnosis, ['class' => 'form-control', 'readonly', 'rows' => '5']) !!}
+        {!! Form::textarea('diagnosis', $visit->diagnosis, ['class' => 'form-control', 'rows' => '5', 'readonly']) !!}
     </div>
 </div>
 
