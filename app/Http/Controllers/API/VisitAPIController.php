@@ -10,7 +10,7 @@ use App\Http\Controllers\AppBaseController;
 use Response;
 
 /**
- * Class VisitController
+ * Class VisitAPIController
  * @package App\Http\Controllers\API
  */
 
@@ -33,7 +33,7 @@ class VisitAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $visits = $this->visitsRepository->all(
+        $visits = $this->visitRepository->all(
             $request->except(['skip', 'limit']),
             $request->get('skip'),
             $request->get('limit')
@@ -96,7 +96,7 @@ class VisitAPIController extends AppBaseController
     {
         $input = $request->all();
 
-        $visits = $this->visitsRepository->create($input);
+        $visits = $this->visitRepository->create($input);
 
         return $this->sendResponse($visits->toArray(), 'Visit saved successfully');
     }
@@ -112,7 +112,7 @@ class VisitAPIController extends AppBaseController
     public function show($id)
     {
         /** @var Visit $visits */
-        $visits = $this->visitsRepository->find($id);
+        $visits = $this->visitRepository->find($id);
 
         if (empty($visits)) {
             return $this->sendError('Visit not found');
@@ -135,13 +135,13 @@ class VisitAPIController extends AppBaseController
         $input = $request->all();
 
         /** @var Visit $visits */
-        $visits = $this->visitsRepository->find($id);
+        $visits = $this->visitRepository->find($id);
 
         if (empty($visits)) {
             return $this->sendError('Visit not found');
         }
 
-        $visits = $this->visitsRepository->update($input, $id);
+        $visits = $this->visitRepository->update($input, $id);
 
         return $this->sendResponse($visits->toArray(), 'Visit updated successfully');
     }
@@ -159,7 +159,7 @@ class VisitAPIController extends AppBaseController
     public function destroy($id)
     {
         /** @var Visit $visits */
-        $visits = $this->visitsRepository->find($id);
+        $visits = $this->visitRepository->find($id);
 
         if (empty($visits)) {
             return $this->sendError('Visit not found');
