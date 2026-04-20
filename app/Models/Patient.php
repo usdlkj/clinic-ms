@@ -29,10 +29,6 @@ class Patient extends Model
     public $table = 'patients';
     
 
-    protected $dates = ['deleted_at'];
-
-
-
     public $fillable = [
         'registration_number',
         'name',
@@ -57,6 +53,7 @@ class Patient extends Model
         'address' => 'string',
         'phone' => 'string',
         'email' => 'string',
+        'deleted_at' => 'datetime',
     ];
 
     /**

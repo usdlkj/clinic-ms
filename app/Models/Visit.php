@@ -28,10 +28,6 @@ class Visit extends Model
     const UPDATED_AT = 'updated_at';
 
 
-    protected $dates = ['deleted_at'];
-
-
-
     public $fillable = [
         'patient_id',
         'visit_date',
@@ -51,7 +47,8 @@ class Visit extends Model
         'visit_date' => 'date',
         'complaint' => 'string',
         'diagnosis' => 'string',
-        'medication' => 'string'
+        'medication' => 'string',
+        'deleted_at' => 'datetime',
     ];
 
     /**
