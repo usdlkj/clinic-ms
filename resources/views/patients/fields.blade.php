@@ -1,24 +1,24 @@
 <!-- Registration Number Field -->
 <div class="form-group row">
-    {!! Form::label('registration_number', 'No Registrasi:', ['class' => 'col-md-3 col-form-label']) !!}
+    <label for="registration_number" class="col-md-3 col-form-label">No Registrasi:</label>
     <div class="col-md-9">
-        {!! Form::text('registration_number', null, ['class' => 'form-control']) !!}
+        <input type="text" id="registration_number" name="registration_number" value="{{ old('registration_number', $patient->registration_number ?? null) }}" class="form-control">
     </div>
 </div>
 
 <!-- Name Field -->
 <div class="form-group row">
-    {!! Form::label('name', 'Nama:', ['class' => 'col-md-3 col-form-label']) !!}
+    <label for="name" class="col-md-3 col-form-label">Nama:</label>
     <div class="col-md-9">
-        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+        <input type="text" id="name" name="name" value="{{ old('name', $patient->name ?? null) }}" class="form-control">
     </div>
 </div>
 
 <!-- Birth Date Field -->
 <div class="form-group row">
-    {!! Form::label('birth_date', 'Tanggal Lahir:', ['class' => 'col-md-3 col-form-label']) !!}
+    <label for="birth_date" class="col-md-3 col-form-label">Tanggal Lahir:</label>
     <div class="col-md-9">
-        {!! Form::text('birth_date', null, ['class' => 'form-control']) !!}
+        <input type="text" id="birth_date" name="birth_date" value="{{ old('birth_date', isset($patient->birth_date) ? $patient->birth_date->format('d-m-Y') : null) }}" class="form-control">
     </div>
 </div>
 
@@ -38,32 +38,32 @@ $('#birth_date').datetimepicker({
 
 <!-- Age Field -->
 <div class="form-group row">
-    {!! Form::label('age', 'Usia:', ['class' => 'col-md-3 col-form-label']) !!}
+    <label for="age" class="col-md-3 col-form-label">Usia:</label>
     <div class="col-md-9">
-        {!! Form::text('age', null, ['class' => 'form-control']) !!}
+        <input type="text" id="age" name="age" value="{{ old('age', $patient->age ?? null) }}" class="form-control">
     </div>
 </div>
 
 <!-- Address Field -->
 <div class="form-group row">
-    {!! Form::label('address', 'Alamat:', ['class' => 'col-md-3 col-form-label']) !!}
+    <label for="address" class="col-md-3 col-form-label">Alamat:</label>
     <div class="col-md-9">
-        {!! Form::textarea('address', null, ['class' => 'form-control', 'rows' => '5']) !!}
+        <textarea id="address" name="address" class="form-control" rows="5">{{ old('address', $patient->address ?? null) }}</textarea>
     </div>
 </div>
 
 <!-- Phone Field -->
 <div class="form-group row">
-    {!! Form::label('phone', 'No Telepon:', ['class' => 'col-md-3 col-form-label']) !!}
+    <label for="phone" class="col-md-3 col-form-label">No Telepon:</label>
     <div class="col-md-9">
-        {!! Form::text('phone', null, ['class' => 'form-control']) !!}
+        <input type="text" id="phone" name="phone" value="{{ old('phone', $patient->phone ?? null) }}" class="form-control">
     </div>
 </div>
 
 <!-- Email Field -->
 <div class="form-group row">
-    {!! Form::label('email', 'Email:', ['class' => 'col-md-3 col-form-label']) !!}
+    <label for="email" class="col-md-3 col-form-label">Email:</label>
     <div class="col-md-9">
-        {!! Form::text('email', null, ['class' => 'form-control']) !!}
+        <input type="text" id="email" name="email" value="{{ old('email', $patient->email ?? null) }}" class="form-control">
     </div>
 </div>

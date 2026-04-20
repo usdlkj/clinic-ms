@@ -1,13 +1,13 @@
 <!-- Patient Id Field-->
 @if (isset($patient))
-{!! Form::hidden('patient_id', $patient->id) !!}
+<input type="hidden" name="patient_id" value="{{ $patient->id }}">
 @endif
 
 <!-- Visit Date Field -->
 <div class="form-group row">
-    {!! Form::label('visit_date', 'Tanggal Kunjungan:', ['class' => 'col-md-4 col-form-label']) !!}
+    <label for="visit_date" class="col-md-4 col-form-label">Tanggal Kunjungan:</label>
     <div class="col-md-8">
-        {!! Form::text('visit_date', null, ['class' => 'form-control']) !!}
+        <input type="text" id="visit_date" name="visit_date" value="{{ old('visit_date', isset($visit) ? $visit->visit_date->format('d-m-Y') : null) }}" class="form-control">
     </div>
 </div>
 
@@ -27,15 +27,15 @@ $('#visit_date').datetimepicker({
 
 <!-- Complaint Field -->
 <div class="form-group row">
-    {!! Form::label('complaint', 'Keluhan:', ['class' => 'col-md-4 col-form-label']) !!}
+    <label for="complaint" class="col-md-4 col-form-label">Keluhan:</label>
     <div class="col-md-8">
-        {!! Form::textarea('complaint', null, ['class' => 'form-control', 'rows' => '5']) !!}
+        <textarea id="complaint" name="complaint" class="form-control" rows="5">{{ old('complaint', $visit->complaint ?? null) }}</textarea>
     </div>
 </div>
 
 <!-- Diagnosis Field -->
 <div class="form-group row">
-    {!! Form::label('diagnosis', 'Diagnosa:', ['class' => 'col-md-4 col-form-label']) !!}
+    <label for="diagnosis" class="col-md-4 col-form-label">Diagnosa:</label>
     <div class="col-md-8">
         <select id="diagnosis" name="diagnosis" class="form-control"></select>
     </div>
@@ -43,9 +43,9 @@ $('#visit_date').datetimepicker({
 
 <!-- Medication Field -->
 <div class="form-group row">
-    {!! Form::label('medication', 'Obat:', ['class' => 'col-md-4 col-form-label']) !!}
+    <label for="medication" class="col-md-4 col-form-label">Obat:</label>
     <div class="col-md-8">
-        {!! Form::textarea('medication', null, ['class' => 'form-control', 'rows' => '5']) !!}
+        <textarea id="medication" name="medication" class="form-control" rows="5">{{ old('medication', $visit->medication ?? null) }}</textarea>
     </div>
 </div>
 

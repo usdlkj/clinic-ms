@@ -17,16 +17,16 @@
                         <i class="fa fa-edit fa-lg"></i>
                         <strong>Perbarui Pengguna</strong>
                     </div>
-                    {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) !!}
+                    <form method="POST" action="{{ route('users.update', $user->id) }}">@csrf @method('PATCH')
                     <div class="card-body">
                         @include('users.fields_update')
                     </div>
                     <div class="card-footer">
                         <!-- Submit Field -->
-                        {!! Form::submit('Save', ['class' => 'btn kapzet-blue']) !!}
+                        <button type="submit" class="btn kapzet-blue">Save</button>
                         <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancel</a>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>

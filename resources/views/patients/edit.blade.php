@@ -17,16 +17,16 @@
                         <i class="fa fa-edit fa-lg"></i>
                         <strong>Perbarui Pasien</strong>
                     </div>
-                    {!! Form::model($patient, ['route' => ['patients.update', $patient->id], 'method' => 'patch']) !!}
+                    <form method="POST" action="{{ route('patients.update', $patient->id) }}">@csrf @method('PATCH')
                     <div class="card-body">
                         @include('patients.fields')
                     </div>
                     <div class="card-footer">
                         <!-- Submit Field -->
-                        {!! Form::submit('Save', ['class' => 'btn kapzet-blue']) !!}
+                        <button type="submit" class="btn kapzet-blue">Save</button>
                         <a href="{{ route('patients.index') }}" class="btn btn-sm btn-secondary">Cancel</a>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>

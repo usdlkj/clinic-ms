@@ -17,16 +17,15 @@
                 <td>{{ $visit->diagnosis }}</td>
                 <td>{{ $visit->medication }}</td>
                 <td>
-                    {!! Form::open(['route' => ['visits.destroy', $visit->id], 'method' => 'delete']) !!}
+                    <form method="POST" action="{{ route('visits.destroy', $visit->id) }}">@csrf @method('DELETE')
                     <div class='btn-group'>
                         <a href="{{ route('visits.show', [$visit->id]) }}" class='btn btn-ghost-success'><i
                                 class="fa fa-eye"></i></a>
                         <a href="{{ route('visits.edit', [$visit->id]) }}" class='btn btn-ghost-info'><i
                                 class="fa fa-edit"></i></a>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn
-                        btn-ghost-danger', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        <button type="submit" class="btn btn-ghost-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></button>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </td>
             </tr>
             @endforeach

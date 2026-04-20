@@ -27,12 +27,11 @@
                 <td>{{ $patient->diagnosis }}</td>
                 <td>{{ $patient->medication }}</td>
                 <td>
-                    {!! Form::open(['route' => ['patients.destroy', $patient->id], 'method' => 'delete']) !!}
+                    <form method="POST" action="{{ route('patients.destroy', $patient->id) }}">@csrf @method('DELETE')
                     <div class='btn-group'>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn
-                        btn-ghost-danger', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        <button type="submit" class="btn btn-ghost-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></button>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </td>
             </tr>
             @endforeach

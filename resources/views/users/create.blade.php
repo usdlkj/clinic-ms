@@ -17,16 +17,16 @@
                         <i class="fa fa-plus-square-o fa-lg"></i>
                         <strong>Buat Pengguna Baru</strong>
                     </div>
-                    {!! Form::open(['route' => 'users.store']) !!}
+                    <form method="POST" action="{{ route('users.store') }}">@csrf
                     <div class="card-body">
                         @include('users.fields_create')
                     </div>
                     <div class="card-footer">
                         <!-- Submit Field -->
-                        {!! Form::submit('Save', ['class' => 'btn kapzet-blue']) !!}
+                        <button type="submit" class="btn kapzet-blue">Save</button>
                         <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancel</a>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>

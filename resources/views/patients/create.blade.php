@@ -10,7 +10,7 @@
 <div class="container-fluid">
     <div class="animated fadeIn">
         @include('common.errors')
-        {!! Form::open(['route' => 'patients.storePatientVisit']) !!}
+        <form method="POST" action="{{ route('patients.storePatientVisit') }}">@csrf
         <div class="row">
             <div class="col">
                 <div class="card">
@@ -23,7 +23,7 @@
                     </div>
                     <div class="card-footer">
                         <!-- Submit Field -->
-                        {!! Form::submit('Save', ['class' => 'btn kapzet-blue']) !!}
+                        <button type="submit" class="btn kapzet-blue">Save</button>
                         <a href="{{ route('patients.index') }}" class="btn btn-sm btn-secondary">Cancel</a>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        {!! Form::close() !!}
+        </form>
     </div>
 </div>
 @endsection

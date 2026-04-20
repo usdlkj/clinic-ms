@@ -27,16 +27,16 @@
                         <i class="fa fa-plus-square-o fa-lg"></i>
                         <strong>Buat Kunjungan Baru</strong>
                     </div>
-                    {!! Form::open(['route' => ['visits.store', $patient->id]]) !!}
+                    <form method="POST" action="{{ route('visits.store', $patient->id) }}">@csrf
                     <div class="card-body">
                         @include('visits.fields')
                     </div>
                     <div class="card-footer">
                         <!-- Submit Field -->
-                        {!! Form::submit('Simpan', ['class' => 'btn kapzet-blue']) !!}
+                        <button type="submit" class="btn kapzet-blue">Simpan</button>
                         <a href="{{ route('visits.index', [$patient->id]) }}" class="btn btn-secondary">Kembali</a>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>

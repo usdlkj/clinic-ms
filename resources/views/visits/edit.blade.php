@@ -27,16 +27,16 @@
                         <i class="fa fa-edit fa-lg"></i>
                         <strong>Ubah Data Kunjungan</strong>
                     </div>
-                    {!! Form::model($visit, ['route' => ['visits.update', $visit->id], 'method' => 'patch']) !!}
+                    <form method="POST" action="{{ route('visits.update', $visit->id) }}">@csrf @method('PATCH')
                     <div class="card-body">
                         @include('visits.fields')
                     </div>
                     <div class="card-footer">
                         <!-- Submit Field -->
-                        {!! Form::submit('Save', ['class' => 'btn kapzet-blue']) !!}
+                        <button type="submit" class="btn kapzet-blue">Save</button>
                         <a href="{{ route('visits.index', $visit->patient_id) }}" class="btn btn-sm btn-secondary">Cancel</a>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>
