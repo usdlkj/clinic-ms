@@ -6,3 +6,109 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// ─── Tier 1: Visual polish ────────────────────────────────────────────────────
+
+$brand: #1f3281;
+$brand-glow: rgba(31, 50, 129, 0.14);
+
+// Cards: subtle shadow + hover elevation
+.card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+    }
+}
+
+// Buttons: smooth transitions + lift on hover
+.btn {
+    transition: all 0.18s ease;
+}
+
+.btn-primary:hover,
+.btn.kapzet-blue:hover,
+button.kapzet-blue:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(31, 50, 129, 0.30);
+}
+
+.btn:active,
+.btn.kapzet-blue:active {
+    transform: translateY(0);
+    filter: brightness(0.96);
+}
+
+// Form inputs: brand-coloured focus ring
+.form-control {
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+    &:focus {
+        border-color: $brand;
+        box-shadow: 0 0 0 3px $brand-glow;
+    }
+}
+
+// Sidebar: left-border accent on active link
+.sidebar .nav-link {
+    transition: background-color 0.15s ease, padding-left 0.15s ease;
+
+    &.active {
+        border-left: 3px solid rgba(255, 255, 255, 0.85);
+        padding-left: 13px;
+    }
+
+    &:not(.active):hover {
+        background-color: rgba(255, 255, 255, 0.06);
+    }
+}
+
+// Diagnosis chip badge
+.badge-diagnosis {
+    display: inline-block;
+    background-color: rgba(31, 50, 129, 0.07);
+    color: #1a2d6e;
+    border: 1px solid rgba(31, 50, 129, 0.18);
+    font-size: 0.78em;
+    font-weight: 500;
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    white-space: normal;
+    line-height: 1.3;
+}
+
+// Flash notifications: left-border accent + slide-in entry
+@keyframes alertSlideIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.alert {
+    border-radius: 6px;
+    border: none;
+    border-left: 4px solid;
+    animation: alertSlideIn 0.22s ease;
+
+    &-success { border-left-color: #38c172; background: #f0faf5; color: #1a6639; }
+    &-info    { border-left-color: #6cb2eb; background: #ebf5fb; color: #1a4a72; }
+    &-warning { border-left-color: #f6993f; background: #fef9f0; color: #7d4e17; }
+    &-danger  { border-left-color: #e3342f; background: #fdf3f3; color: #7d1a18; }
+}
+
+// Breadcrumb: styled separator
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    font-size: 1.1em;
+    line-height: 1;
+    color: #adb5bd;
+}
+
+// Tables: brand-tinted row hover
+.table-hover tbody tr {
+    transition: background-color 0.12s ease;
+
+    &:hover {
+        background-color: rgba(31, 50, 129, 0.04);
+    }
+}

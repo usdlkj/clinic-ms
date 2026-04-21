@@ -14,7 +14,7 @@
             <tr>
                 <td>{{ $visit->visit_date->format('d-m-Y') }}</td>
                 <td>{{ $visit->complaint }}</td>
-                <td>{{ $visit->diagnosis }}</td>
+                <td><span class="badge-diagnosis">{{ $visit->diagnosis }}</span></td>
                 <td>{{ $visit->medication }}</td>
                 <td>
                     <form method="POST" action="{{ route('visits.destroy', $visit->id) }}">@csrf @method('DELETE')

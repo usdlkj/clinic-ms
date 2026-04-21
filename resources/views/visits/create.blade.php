@@ -24,7 +24,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-plus-square-o fa-lg"></i>
+                        <i class="fa-regular fa-square-plus fa-lg"></i>
                         <strong>Buat Kunjungan Baru</strong>
                     </div>
                     <form method="POST" action="{{ route('visits.store', $patient->id) }}">@csrf

@@ -17,7 +17,8 @@
     {{--<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/flag.min.css">--}}
      <!-- PRO version -->
 
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/v4-shims.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
 
@@ -99,7 +100,7 @@
 <footer class="app-footer">
     <div>
         <a href="https://kapzet.id">Kapzet IT Consulting</a>
-        <span>&copy; 2020 PT Kapzet Teknologi Informasi.</span>
+        <span>&copy; {{ date('Y') }} PT Kapzet Teknologi Informasi.</span>
     </div>
     <div class="ml-auto">
         <span>Powered by</span>

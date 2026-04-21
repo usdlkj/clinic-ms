@@ -24,7 +24,7 @@
                 <td>{{ $patient->age }}</td>
                 <td>{{ $patient->address }}</td>
                 <td>{{ $patient->complaint }}</td>
-                <td>{{ $patient->diagnosis }}</td>
+                <td><span class="badge-diagnosis">{{ $patient->diagnosis }}</span></td>
                 <td>{{ $patient->medication }}</td>
                 <td>
                     <form method="POST" action="{{ route('patients.destroy', $patient->id) }}">@csrf @method('DELETE')

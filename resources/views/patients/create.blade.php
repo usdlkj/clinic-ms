@@ -15,7 +15,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-plus-square-o fa-lg"></i>
+                        <i class="fa-regular fa-square-plus fa-lg"></i>
                         <strong>Pasien</strong>
                     </div>
                     <div class="card-body">
@@ -31,7 +31,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-plus-square-o fa-lg"></i>
+                        <i class="fa-regular fa-square-plus fa-lg"></i>
                         <strong>Kunjungan</strong>
                     </div>
                     <div class="card-body">
